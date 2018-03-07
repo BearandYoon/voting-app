@@ -9,10 +9,10 @@ Built based on [Angular Full Stack](https://github.com/DavideViolante/Angular-Fu
 Uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoose.js](http://www.mongoosejs.com) ([MongoDB](https://www.mongodb.com)): database
 * [**E**xpress.js](http://expressjs.com): backend framework
-* [**A**ngular 4](https://angular.io): frontend framework
+* [**A**ngular 5](https://angular.io): frontend framework
 * [**N**ode.js](https://nodejs.org): runtime environment
 * [Angular CLI](https://cli.angular.io): project scaffolding
-* [Angular material 2](https://material.angular.io): layout and styles
+* [Angular material 5](https://material.angular.io): layout and styles
 
 ## Prerequisites
 1. Install [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com)
