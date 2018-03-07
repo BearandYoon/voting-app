@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <a routerLink="/"><span class="brand" >VotingSpace</span></a>
+  <button mat-button routerLink="/polls">Polls</button>
+  <button mat-button *ngIf="isLoggedIn()" routerLink="/create">New poll</button>
+  <span class="fill"></span>
+  <button *ngIf="!isLoggedIn()" mat-button routerLink="/login">
+    Login
+  </button>
+  <button *ngIf="!isLoggedIn()" mat-button routerLink="/register">
+    Register
+  </button>
+  <button *ngIf="isLoggedIn()" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/polls', {id: getUserId()}]">
+      <mat-icon>done_all</mat-icon>
+      <span>My polls</span>
+    </button>
+    <button mat-menu-item [routerLink]="['/profile']">
+      <mat-icon>account_box</mat-icon>
+      <span>Profile</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Log out</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

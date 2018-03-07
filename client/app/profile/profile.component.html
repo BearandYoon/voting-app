@@ -1,0 +1,30 @@
+<div class="center-container">
+  <h1 class="title">Profile</h1>
+  <form [formGroup]="userForm">
+    <mat-input-container>
+      <input type="text" matInput placeholder="Name"
+             [formControl]="userForm.controls.name">
+    </mat-input-container>
+    <mat-input-container>
+      <input type="text" matInput placeholder="Email"
+             [formControl]="userForm.controls.email">
+    </mat-input-container>
+  </form>
+
+  <h1 class="title">Change password</h1>
+  <form name="password-form" [formGroup]="passwordForm"
+        (submit)="changePassword(passwordForm.value)">
+    <mat-input-container>
+      <input type="password" name="old-password" matInput placeholder="Old password"
+             [formControl]="passwordForm.controls.oldPassword">
+    </mat-input-container>
+    <md-input-container>
+      <input type="password" name="new-password" matInput placeholder="New password"
+             [formControl]="passwordForm.controls.newPassword">
+    </md-input-container>
+    <button type="submit" mat-raised-button color="primary"
+            [disabled]="!passwordForm.valid">
+      Change password
+    </button>
+  </form>
+</div>

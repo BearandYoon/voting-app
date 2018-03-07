@@ -1,0 +1,14 @@
+<div class="center-container">
+  <h1 class="title">Login</h1>
+  <form [formGroup]="userForm" (submit)="submit(userForm.value)">
+    <mat-input-container>
+      <input matInput type="email"  placeholder="Email" [formControl]="userForm.controls['email']">
+    </mat-input-container>
+    <mat-input-container>
+      <input matInput type="password"  placeholder="Password" [formControl]="userForm.controls['password']">
+    </mat-input-container>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!userForm.valid">Login</button>
+    <button type="button" mat-button color="accent" routerLink="/register">Register</button>
+  </form>
+</div>
+

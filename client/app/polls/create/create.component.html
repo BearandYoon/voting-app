@@ -1,0 +1,21 @@
+<div class="center-container">
+  <h1 class="title">New poll</h1>
+  <form [formGroup]="pollForm" (submit)="submit(pollForm.value)">
+    <mat-input-container>
+      <input matInput placeholder="Title" [formControl]="pollForm.controls.name">
+    </mat-input-container>
+    <p>Options</p>
+    <div formArrayName="options">
+      <div class="input-container" *ngFor="let poll of pollForm.controls['options']['controls']; let i = index">
+        <mat-input-container [formGroupName]="i">
+          <input matInput formControlName="value" placeholder={{getOptionName(i)}}>
+        </mat-input-container>
+        <button *ngIf="i > 1" type="button" class="remove" mat-icon-button (click)="removeOption(i)">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+    </div>
+    <button type="button" mat-button color="accent" class="add" (click)="addOption()">Add option</button>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!pollForm.valid">Submit</button>
+  </form>
+</div>

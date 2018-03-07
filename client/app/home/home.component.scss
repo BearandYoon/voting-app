@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.home {
+  background: url('../../assets/images/quiz_sb.jpg');
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+
+.home-content {
+  padding: 20px;
+  margin: auto;
+}
+
+.home h1 {
+  font-size: 60px;
+  margin: 0 0 20px 0;
+}
+
+.home h2 {
+  margin: 0 0 30px 0;
+  font-size: 30px;
+}
+
+.home a {
+  color: #ff4081;
+}
+
+.columns {
+  padding: 30px 20px 30px 20px;
+}
+
+.column {
+  text-align: center;
+}
+
+.column mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+@media (min-width: 768px) {
+  .columns {
+    display: flex;
+    flex-direction: row;
+  }
+  .column {
+    flex: 1;
+  }
+}

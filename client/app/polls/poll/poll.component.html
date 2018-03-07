@@ -1,0 +1,43 @@
+<div class="center-container" *ngIf="poll">
+  <h1 class="title">{{poll.name}}</h1>
+
+    <form class="poll-wrapper"
+          [formGroup]="voteForm"
+          (submit)="vote(voteForm.value)">
+      <div class="poll">
+        <mat-select placeholder="Choose an option"
+                   [formControl]="voteForm.controls['option']">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let option of poll.options" [value]="option._id">
+            {{option.value}}
+          </mat-option>
+        </mat-select>
+
+        <span *ngIf="canCreateCustomOption()" class="own-version">or vote with</span>
+
+        <mat-input-container *ngIf="canCreateCustomOption()">
+          <input matInput type="text"
+                 placeholder="your own version"
+                 [formControl]="voteForm.controls['newOption']">
+        </mat-input-container>
+
+      </div>
+      <button type="submit" class="vote-button" mat-raised-button color="primary"
+              [disabled]="!isValid(voteForm.value)">
+        Vote
+      </button>
+      <button type="button" class="delete-button" mat-raised-button
+              *ngIf="canDelete(poll)"
+              (click)="delete(poll)">
+        Delete
+      </button>
+    </form>
+
+    <!--<p *ngIf="!canVote(poll)" class="voted">You already voted</p>-->
+
+    <div class="chart" *ngIf="hasVotes(poll)">
+      <app-chart [options]="poll.options"></app-chart>
+    </div>
+    <div class="no-votes" *ngIf="!hasVotes(poll)">No votes to show statistics yet</div>
+
+</div>

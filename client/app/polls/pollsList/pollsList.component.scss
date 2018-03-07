@@ -1,0 +1,38 @@
+.center-container {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 3px 6px;
+}
+
+mat-card:last-child {
+  margin-bottom: 40px;
+}
+
+mat-card {
+  cursor: pointer;
+}
+
+.small {
+  color: #374147;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.center-container {
+  position: relative;
+}
+
+[mat-fab] {
+  position: absolute;
+  right: 20px;
+  bottom: -25px;
+  font-size: 20px;
+}

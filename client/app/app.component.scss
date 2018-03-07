@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.root {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+footer {
+  background: #374147;
+  color: #ccc;
+  flex: 0 0 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer mat-icon {
+  padding: 8px 0;
+}

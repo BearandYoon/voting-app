@@ -1,0 +1,15 @@
+<div class="center-container">
+  <h1 class="title">Polls</h1>
+  <mat-card *ngFor="let poll of pollList" [routerLink]='[poll._id]'>
+    <mat-card-title>
+      {{poll.name}}
+      <p class="small">created by {{poll.createdBy.name}}</p>
+    </mat-card-title>
+  </mat-card>
+  <mat-card *ngIf="pollList && !pollList.length">No polls yet. Create a first one!</mat-card>
+  <button mat-fab matTooltip="Add new poll" matTooltipPosition="above"
+          *ngIf="isLoggedIn() && pollList"
+          routerLink="/create">
+    +
+  </button>
+</div>

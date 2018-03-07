@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  color: #ff4081;
+}
+
+.fill{
+  flex: 1 1 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.toast-bottom-right {
+  bottom: 40px;
+}
+
+.container {
+  padding: 20px 0 0 40px;
+}
+
+.center-container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  .center-container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .center-container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  .center-container {
+    width: 50%;
+  }
+}
+
+// loader
+
+.loader {
+  animation: rotate 0.8s infinite linear;
+  border: 8px solid #ff4081;
+  border-right-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  height: 100px;
+  width: 100px;
+}
+
+@keyframes rotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}
+
+
+
+
